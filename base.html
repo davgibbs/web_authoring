@@ -1,0 +1,63 @@
+<!--<!DOCTYPE HTML>-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Web My Health</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- JQ Plot-->
+<script type="text/javascript" src="./js/jqplot/dist/jquery.jqplot.min.js"></script>
+<script type="text/javascript" src="./js/jqplot/dist/plugins/jqplot.dateAxisRenderer.min.js"></script>
+<script type="text/javascript" src="./js/jqplot/dist/plugins/jqplot.highlighter.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./js/jqplot/dist/jquery.jqplot.min.css"/>
+<!-- JS Tree-->
+<script type="text/javascript" src="./js/jstree/vakata-jstree-841eee8/dist/jstree.min.js"></script>
+<link rel="stylesheet" href="./js/jstree/vakata-jstree-841eee8/dist/themes/default/style.min.css" />
+
+<script type="text/javascript" src="./js/wmh_jqplot.js"></script>
+<link rel="stylesheet" type="text/css" href="css/base.css" />
+</head>
+
+<body>
+
+<header>
+<div id="wmh_logo">
+<img src="images/wmh_transparent.png" alt="Web My Health Logo" height="35" width="153"> <!--resize image-->
+</div>
+<div id="navigation">
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+</ul>
+</div>
+</header>
+
+<aside>
+<div id="profile_pic">
+<img src="images/default_profile_pic.jpg" alt="Profile Picture">
+</div>
+Tree
+<div id="jstree_div">
+THis
+</div>
+</aside>
+
+<section>
+<div id="profile_info">
+Name: David Gibbons<br>
+Age: 26<br>
+Gender: Male
+</div>
+<div id="controls">
+Controls
+</div>
+<div id="content">
+Graph
+<div id="sensorlog-name"></div>
+<div id="webmyhealth-chart" style="left: 40px; width:930px;"></div><!--Move from left to allow space for tooltip-->
+</div>
+</section> 
+
+<footer>Copyright © WebMyHealth</footer>
+
+</body>
+</html>

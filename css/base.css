@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+
+header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px; 
+}
+aside {
+    clear:both;
+    line-height:30px;
+    background-color:#eeeeee;
+    height:600px;
+    width:300px;
+    float:left;
+    padding:5px; 
+}
+section {
+    width:950px;
+	height:600px;
+    float:left;
+    padding:10px;
+	background-color:#eeffff;
+}
+footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px; 
+}
+
+#wmh_logo {
+	text-align:left;
+	height:40px;
+	width:200px;
+	float:left;
+}
+
+/* Navigation Styling */
+#navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#navigation li {
+    float: left;
+}
+
+#navigation a:link, #navigation a:visited {
+    display: block;
+    width: 120px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #7882AC;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#navigation a:hover, #navigation a:active{
+    background-color: #343477;
+}
+
+#navigation a.active {
+    background-color: #09093B;
+}
+
+#navigation {
+	float:left;
+}

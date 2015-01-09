@@ -23,7 +23,7 @@ function renderGraphAjax(sensorlog_ids, from_date, to_date, owner_id) {
 
 			$("#sensorlog-name").empty();
             if (sensorlog_name_array.length == 1){
-                $("#sensorlog-name").append('<h1>' + sensorlog_name_array[0][0] + '</h1>');
+                $("#sensorlog-name").append(sensorlog_name_array[0][0]);
             }
 
             if (errors.length > 0){
@@ -77,7 +77,7 @@ function renderGraphAjax(sensorlog_ids, from_date, to_date, owner_id) {
 function renderTree() {
 	alert("here");
 	// ajax demo
-	$('#jstree_div').jstree({
+	/*$('#jstree_div').jstree({
 		'json_data' : {
 			'ajax' : {
 				"url" : "./root.json",
@@ -86,7 +86,7 @@ function renderTree() {
 			}
 		},
 		'plugins': ["json_data", "themes", "ui"]
-	});
+	});*/
 };
 
 function renderTree2() {
@@ -106,6 +106,6 @@ function renderTree2() {
 
 
 $(document).ready(function(){
-	renderTree();
+	renderTree2();
 	renderGraphAjax(["1"], null, null, null);
 });

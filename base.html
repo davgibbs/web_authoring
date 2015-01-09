@@ -18,62 +18,58 @@
 </head>
 
 <body>
+	<header>
+		<div id="wmh_logo">
+			<img src="images/wmh_transparent.png" alt="Web My Health Logo" height="35" width="153"> <!--resize image-->
+		</div>
+        <div id="navigation">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+	</header>
 
-<header>
-<div id="wmh_logo">
-<img src="images/wmh_transparent.png" alt="Web My Health Logo" height="35" width="153"> <!--resize image-->
-</div>
-<div id="navigation">
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">About</a></li>
-</ul>
-</div>
-</header>
-
-
-
-<section>
-
-
-<div class="innerPadding">
-    <div class="innerDivA-container">
-        <div class="innerDivA-content">content a
-            <div id="profile_pic">
-            	<img src="images/default_profile_pic.jpg" alt="Profile Picture">
+    <section>
+        <div class="innerPadding">
+            <div class="innerDivA-container" style="background-color:grey">
+                <div class="innerDivA-content">content a
+                    <div id="profile_pic">
+                        <img src="images/default_profile_pic.jpg" alt="Profile Picture">
+                    </div>
+                    <div id="jstree_div">
+                        Tree
+                    </div>
+                </div>
             </div>
-            Tree
-            <div id="jstree_div">
-            	THis
+            <div class="innerDivB-container" >
+                <div class="innerDivB-content" >content b
+                    <div id="btop">
+                        <div id="profile_info">
+                            Name: David Gibbons<br>
+                            Age: 26<br>
+                            Gender: Male
+                        </div>
+        
+                        <div id="controls">
+                            Controls
+                        </div>
+                    </div>
+                    <div id="bbottom">
+                        <div id="sensorlog-name">
+                            Sensorlog Name
+                        </div>
+                        <div id="webmyhealth-chart"><!--Move from left to allow space for tooltip-->
+                           Graph
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="innerDivB-container" style="background-color:green">
-        <div class="innerDivB-content" >content b
-            <div id="profile_info">
-                Name: David Gibbons<br>
-                Age: 26<br>
-                Gender: Male
-            </div>
-            <div id="controls">
-            	Controls
-            </div>
-            Graph
-            <div id="sensorlog-name">
-            </div>
-            <div id="webmyhealth-chart" style="left: 40px; width:930px;"></div><!--Move from left to allow space for tooltip-->
-            </div>
-        </div>
-    </div>
-</div>
+    </section> 
 
-
-
-
-
-</section> 
-
-<footer>Copyright © WebMyHealth</footer>
-
+    <footer>
+        Copyright © WebMyHealth
+    </footer>
 </body>
 </html>

@@ -74,38 +74,56 @@ function renderGraphAjax(sensorlog_ids, from_date, to_date, owner_id) {
     });
 };
 
+
+
+
+
 function renderTree() {
-	alert("here");
-	// ajax demo
-	/*$('#jstree_div').jstree({
-		'json_data' : {
-			'ajax' : {
-				"url" : "./root.json",
-				"dataType" : "json", // needed only if you do not supply JSON headers
-				"success": function (data) {alert('hi guys');}
-			}
-		},
-		'plugins': ["json_data", "themes", "ui"]
-	});*/
+	$('#jstree_div').jstree(	
+        tree_data
+	);
 };
 
-function renderTree2() {
-	// inline data demo
-	$('#jstree_div').jstree({
-		'core' : {
-			'data' : [
-				{ "text" : "Root node", "id":1, "children" : [
-						{ "id":2, "text" : "Child node 1" },
-						{ "id":3, "text" : "Child node 2" }
-				]}
-			]
-		}
-	});
+
+
+
+function renderGraph(sensorlog_ids) {
+                sensorlog_ids[0];
+
+				my_axes = {xaxis:{renderer:$.jqplot.DateAxisRenderer, label: "X Axis", pad: 0}, yaxis: { label: "Y Axis"}}
+		
+				my_series_names = {label: "this here",
+								   lineWidth:2, 
+								   markerOptions: { style:"filledCircle", size:5 },}
+				
+                var my_options = {
+                    axes: my_axes,
+                    legend: { show: false, location: 'nw'},
+                    highlighter: {show: true, sizeAdjust: 7.5 },
+                    series: my_series_names
+                };
+				
+				 /*$("#resizable1").resizable({delay:20});
+				 
+				  $('#resizable1').bind('resize', function(event, ui) {
+					  // pass in resetAxes: true option to get rid of old ticks and axis properties
+					  // which should be recomputed based on new plot size.
+					  plot1.replot( { resetAxes: true } );
+				  });*/
+								
+				$('#webmyhealth-chart').empty();
+                var plot1 = $.jqplot('webmyhealth-chart', [[3,7,9,1,4,6,8,2,5]], my_options);
+				return plot1;
 };
 
 
 
 $(document).ready(function(){
-	renderTree2();
-	renderGraphAjax(["1"], null, null, null);
+    renderTree();
+	/*renderGraphAjax(["1"], null, null, null);*/
+	plot1 = renderGraph(["1"]);
+});
+
+$(window).resize(function(){
+	plot1.replot( {resetAxes: true } );
 });

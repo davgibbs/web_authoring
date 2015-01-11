@@ -80,7 +80,14 @@ div.innerDivA-content, div.innerDivB-content {
 #sensorlog-name {
 	font-size: 1.5em;
 	font: bold;
-	
+	height: 30px;
+}
+
+#webmyhealth-chart {
+	height: -moz-calc(95% - 70px);
+    height: -webkit-calc(95% - 70px);
+	height: calc(95% - 70px);
+	padding: 20px;
 }
 
 /* Navigation Styling */

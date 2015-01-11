@@ -3,16 +3,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Web My Health</title>
+<!-- JQuery and JQuery-UI -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<!-- JQ Plot-->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<!-- JQ Plot -->
 <script type="text/javascript" src="./js/jqplot/dist/jquery.jqplot.min.js"></script>
 <script type="text/javascript" src="./js/jqplot/dist/plugins/jqplot.dateAxisRenderer.min.js"></script>
 <script type="text/javascript" src="./js/jqplot/dist/plugins/jqplot.highlighter.min.js"></script>
 <link rel="stylesheet" type="text/css" href="./js/jqplot/dist/jquery.jqplot.min.css"/>
-<!-- JS Tree-->
+<!-- JS Tree -->
 <script type="text/javascript" src="./js/jstree/vakata-jstree-841eee8/dist/jstree.min.js"></script>
 <link rel="stylesheet" href="./js/jstree/vakata-jstree-841eee8/dist/themes/default/style.min.css" />
 
+<script type="text/javascript" src="./js/treedata1.js"></script>
 <script type="text/javascript" src="./js/wmh_jqplot.js"></script>
 <link rel="stylesheet" type="text/css" href="css/base.css" />
 </head>
@@ -59,8 +63,10 @@
                         <div id="sensorlog-name">
                             Sensorlog Name
                         </div>
-                        <div id="webmyhealth-chart"><!--Move from left to allow space for tooltip-->
-                           Graph
+                        <div id="resizable1">
+                            <div id="webmyhealth-chart"><!--Move from left to allow space for tooltip-->
+                               Graph
+                            </div>
                         </div>
                     </div>
                 </div>

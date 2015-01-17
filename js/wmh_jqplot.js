@@ -1,27 +1,38 @@
+var graph = {
+	sensorlog_ids: ["2"],
+	show_target: false,
+}
+
 function renderTree() {
 	$('#jstree_div').jstree(	
         tree_data
 	);
 	// Listen for event: tree changing
 	$('#jstree_div').on("changed.jstree", function (e, data) {
-	   plot1 = renderGraph(data.selected);
+	   graph.sensorlog_ids = data.selected;
+	   plot1 = renderGraph(graph.sensorlog_ids, graph.show_target);
     });
 };
 
 function renderGraph(sensorlog_ids, show_target) {
 	if (sensorlog_ids[0] == "2" && show_target){
 		data = [data1, data1_target];
-		name = "Daily Steps";
+		names = ["Daily Steps", "Daily Steps Target"];
 		y_label = "m2";
+	}
+	else if (sensorlog_ids[0] == "3" && show_target){
+		data = [data2, data2_target];
+		names = ["Daily Active Minutes", "Daily Active Minutes Target"];
+		y_label = "kll";
 	}
 	else if (sensorlog_ids[0] == "2"){
 		data = [data1];
-		name = "Daily Steps";
+		names = ["Daily Steps"];
 		y_label = "m2";
 	}
 	else if(sensorlog_ids[0] == "3"){
-		data = [data2]; /* [data, data2] */
-		name = "Daily Active Minutes";
+		data = [data2];
+		names = ["Daily Active Minutes"];
 		y_label = "kll";
 	}
 
@@ -29,17 +40,20 @@ function renderGraph(sensorlog_ids, show_target) {
 	           yaxis: { label: y_label,
                        }}
 
-	my_series_names = {label: "this here",
-					   lineWidth:2, 
-					   markerOptions: { style:"filledCircle", size:5 },
-                       highlighter: {formatString: "%s, %s" + y_label}
-					   }
+	var wmh_series = new Array();
+    for (i = 0; i < names.length; i++) { 
+		wmh_series.push({label: names[i],
+						   lineWidth:2, 
+						   markerOptions: { style:"filledCircle", size:5 },
+						   highlighter: {formatString: "%s, %s" + y_label}
+						   });
+	}
 	
 	var my_options = {
 		axes: my_axes,
 		legend: { show: true, location: 'nw'},
 		highlighter: {show: true, sizeAdjust: 7.5 },
-		series: [my_series_names]
+		series: wmh_series
 	};
 							
 	$('#webmyhealth-chart').empty();
@@ -52,16 +66,20 @@ function renderGraph(sensorlog_ids, show_target) {
 function listen_show_target(plot1) {
 	$('input:checkbox').change(function(){
 		if($(this).is(':checked')){
-			plot1 = renderGraph(["2"], true);
+			graph.show_target = true;
+			plot1 = renderGraph(graph.sensorlog_ids, graph.show_target);
+		}
+		else{
+			graph.show_target = false;
+			plot1 = renderGraph(graph.sensorlog_ids, graph.show_target);
 		}
 	});
-	return plot1
 }
 
 $(document).ready(function(){
     renderTree();
-	plot1 = renderGraph(["2"], false);
-	plot1 = listen_show_target(plot1);
+	plot1 = renderGraph(graph.sensorlog_ids, false);
+	listen_show_target(plot1);
 });
 
 $(window).resize(function(){

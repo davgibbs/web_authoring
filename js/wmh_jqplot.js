@@ -11,6 +11,7 @@ function renderTree() {
 	$('#jstree_div').on("changed.jstree", function (e, data) {
 	   graph.sensorlog_ids = data.selected;
 	   plot1 = renderGraph(graph.sensorlog_ids, graph.show_target);
+	   show_stat_text();
     });
 };
 
@@ -18,27 +19,26 @@ function renderGraph(sensorlog_ids, show_target) {
 	if (sensorlog_ids[0] == "2" && show_target){
 		data = [data1, data1_target];
 		names = ["Daily Steps", "Daily Steps Target"];
-		y_label = "m2";
+		y_label = "steps";
 	}
 	else if (sensorlog_ids[0] == "3" && show_target){
 		data = [data2, data2_target];
 		names = ["Daily Active Minutes", "Daily Active Minutes Target"];
-		y_label = "kll";
+		y_label = "mins";
 	}
 	else if (sensorlog_ids[0] == "2"){
 		data = [data1];
 		names = ["Daily Steps"];
-		y_label = "m2";
+		y_label = "steps";
 	}
 	else if(sensorlog_ids[0] == "3"){
 		data = [data2];
 		names = ["Daily Active Minutes"];
-		y_label = "kll";
+		y_label = "mins";
 	}
 
 	my_axes = {xaxis: { renderer:$.jqplot.DateAxisRenderer, label: "Date"},
-	           yaxis: { label: y_label,
-                       }}
+	           yaxis: { label: y_label,}}
 
 	var wmh_series = new Array();
     for (i = 0; i < names.length; i++) { 
@@ -62,27 +62,51 @@ function renderGraph(sensorlog_ids, show_target) {
 	return plot1;
 };
 
+function calculate_stat() {
+	    var total = 0;
+	    var reached_target = 0;
+        for (i = 0; i < data[0].length; i++) {
+			if ( data[0][i][1] >= data[1][i][1] ) {
+				reached_target += 1;
+			}
+			total += 1;
+		}
+
+		percentage = reached_target / total * 100.0;
+		return percentage + "%";
+	};
+
+function show_stat_text() {
+	if(graph.show_target == true){
+	    $('#stat_text').text('You have reached your target ' + calculate_stat() +  ' of days');
+	}
+	else {	
+	    $('#stat_text').empty();
+	}
+};
 
 function listen_show_target(plot1) {
 	$('input:checkbox').change(function(){
 		if($(this).is(':checked')){
 			graph.show_target = true;
 			plot1 = renderGraph(graph.sensorlog_ids, graph.show_target);
+			show_stat_text();
 		}
 		else{
 			graph.show_target = false;
 			plot1 = renderGraph(graph.sensorlog_ids, graph.show_target);
+			show_stat_text();
 		}
 	});
+	return plot1
 }
 
 $(document).ready(function(){
     renderTree();
 	plot1 = renderGraph(graph.sensorlog_ids, false);
-	listen_show_target(plot1);
+	plot1 = listen_show_target(plot1);
 });
 
 $(window).resize(function(){
 	plot1.replot( {resetAxes: true } );
 });
-

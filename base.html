@@ -1,6 +1,5 @@
 <!--<!DOCTYPE HTML>-->
-<html>
-<head>
+<html><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Web My Health</title>
 <!-- JQuery and JQuery-UI -->
@@ -17,6 +16,7 @@
 <script type="text/javascript" src="./js/jstree/vakata-jstree-841eee8/dist/jstree.min.js"></script>
 <link rel="stylesheet" href="./js/jstree/vakata-jstree-841eee8/dist/themes/default/style.min.css" />
 <!-- my Files -->
+<script type="text/javascript" src="./js/set_active.js"></script>
 <script type="text/javascript" src="./js/wmh_jqplot.js"></script>
 <link rel="stylesheet" type="text/css" href="css/base.css" />
 <!-- Data Files -->
@@ -27,62 +27,65 @@
 <body>
 	<header>
 		<div id="wmh_logo">
-			<img src="images/wmh_transparent.png" alt="Web My Health Logo" height="35" width="153"> <!--resize image-->
+			<img src="images/wmh_transparent.png" alt="Web My Health Logo" height="30" width="158"> <!--resize image-->
 		</div>
         <div id="navigation">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="file:///C:/Users/dgibbons/Desktop/web_authoring/base.html">Home</a></li>
+                <li><a href="file:///C:/Users/dgibbons/Desktop/web_authoring/contact_us.html">About</a></li>
             </ul>
         </div>
 	</header>
 
     <section>
         <div class="innerPadding">
-            <div class="innerDivA-container" style="background-color:grey">
+            <div class="innerDivA-container">
                 <div class="innerDivA-content">
                     <div id="profile_pic">
-                        <img src="images/default_profile_pic.jpg" alt="Profile Picture">
+                    	<div id="profile_pic_padding">
+                            <img src="images/profile_pic_150px_250px.jpg" alt="Profile Picture" height="200" width="298">
+                        </div>
                     </div>
-                    <div id="jstree_div">
-                        Tree
+                    <div id="jstree_div_padding">
+                        <div id="jstree_div">
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="innerDivB-container" >
                 <div class="innerDivB-content" >
                     <div id="btop">
-                        <table id="profile_info"
-                            <tr>
-                                <td>Name</td>
-                                <td>David Gibbons</td>
-                            </tr>
-                            <tr>
-                                <td>Gender</td>
-                                <td>Male</td>
-                            </tr>
-							<tr>
-                                <td>Age</td>
-                                <td>26</td>
-                            </tr>
-							<tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                        	<tr>
-                            	<td>Show Target</td>
-                            	<td><input type="checkbox"/></td>
-                            </tr>
-                        </table>
+                    	<div id="top-padding">
+                            <table id="profile_info">
+                                <tr>
+                                    <td>Name</td>
+                                    <td>David Gibbons</td>
+                                </tr>
+                                <tr>
+                                    <td>Gender</td>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <td>Age</td>
+                                    <td>26</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Show Target</td>
+                                    <td><input type="checkbox"/></td>
+                                </tr>
+                            </table>
+                        	<p id="stat_text"></p>
+                        </div>
                     </div>
                     <div id="bbottom">
-                        <div id="chartPadding">
-                            <div id="webmyhealth-chart">
-                               Graph
+                        <div id="chartPadding-outer">
+                            <div id="chartPadding">
+                                <div id="webmyhealth-chart">
+                                </div>
                             </div>
                         </div>
                     </div>

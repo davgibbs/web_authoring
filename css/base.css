@@ -69,7 +69,7 @@ div.innerDivA-content, div.innerDivB-content {
 
 #profile_pic {
 	height: 200px;
-	background-color:#244D6F;
+	background-color:#D3D3D3;
 }
 
 #profile_info {
@@ -132,7 +132,8 @@ div.innerDivA-content, div.innerDivB-content {
 }
 
 #profile_pic_padding {
-	padding: 0px;
+	padding-left: 49px;
+	padding-right: 49px;
 }
 
 /* Navigation Styling */

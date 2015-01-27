@@ -18,6 +18,9 @@
 <!--DataTables -->
 <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+<!--JQuery Chosen -->
+<link rel="stylesheet" type="text/css" href="./js/chosen/chosen.min.css">
+<script type="text/javascript" src="./js/chosen/chosen.jquery.min.js"></script>
 <!-- my Files -->
 <script type="text/javascript" src="./js/set_active.js"></script>
 <script type="text/javascript" src="./js/wmh_jqplot.js"></script>
@@ -37,8 +40,8 @@
 		</div>
         <div id="navigation">
             <ul>
-                <li><a href="file:///C:/Users/dgibbons/Desktop/web_authoring/base.html">Home</a></li>
-                <li><a href="file:///C:/Users/dgibbons/Desktop/web_authoring/contact_us.html">About</a></li>
+                <li><a href="./base.html">Home</a></li>
+                <li><a href="./contact_us.html">About</a></li>
             </ul>
         </div>
 	</header>
@@ -68,10 +71,6 @@
                                     <td>David Gibbons</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Gender:</strong></td>
-                                    <td>Male</td>
-                                </tr>
-                                <tr>
                                     <td><strong>Age:</strong></td>
                                     <td>26</td>
                                 </tr>
@@ -80,8 +79,17 @@
                                     <td>&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td>Show Target</td>
-                                    <td><input type="checkbox"/></td>
+                                    <td>Display Type:</td>
+                                    <td >
+                                        <select class="chosen" name="display_type_select">
+                                                <option value="graph">Graph</option>
+                                                <option value="table">Table</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Show Target:</td>
+                                    <td><input type="checkbox" id="show_target_checkbox"/></td>
                                 </tr>
                             </table>
                         	<p id="stat_text"></p>

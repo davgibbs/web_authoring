@@ -6,6 +6,7 @@ var tree_data = {
 					{ "id":2, "text" : "Daily Steps", "icon" : "./images/feet-icon_24px_24px.png", "state" : {'selected' : true}},
 					{ "id":3, "text" : "Daily Active Minutes", "icon" : "./images/running_24px_24px.jpg"}
 			]}
-		]
+		],
+		'multiple': false,
 	}
 }

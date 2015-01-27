@@ -10,12 +10,12 @@ function renderTree() {
 	// Listen for event: tree changing
 	$('#jstree_div').on("changed.jstree", function (e, data) {
 	   graph.sensorlog_ids = data.selected;
-	   /*plot1 = renderGraph(graph.sensorlog_ids, graph.show_target);
-	   show_stat_text();*/
+	   plot1 = renderGraph(graph.sensorlog_ids, graph.show_target);
+	   show_stat_text();
     });
 };
 
-/*
+
 function renderGraph(sensorlog_ids, show_target) {
 	if (sensorlog_ids[0] == "2" && show_target){
 		data = [data1, data1_target];
@@ -87,7 +87,7 @@ function show_stat_text() {
 };
 
 function listen_show_target(plot1) {
-	$('input:checkbox').change(function(){
+	$('#show_target_checkbox:input:checkbox').change(function(){
 		if($(this).is(':checked')){
 			graph.show_target = true;
 			plot1 = renderGraph(graph.sensorlog_ids, graph.show_target);
@@ -100,7 +100,7 @@ function listen_show_target(plot1) {
 		}
 	});
 	return plot1
-}*/
+};
 
 
 var dataSet = [
@@ -165,31 +165,38 @@ var dataSet = [
 
 function renderTable() {
 	$('#webmyhealth-chart').empty();
-    $('#webmyhealth-chart').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="example"></table>' );
+    $('#webmyhealth-chart').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="example" style="max-width:600px"></table>' );
  
     $('#example').dataTable( {
         "data": data1,
         "columns": [
             { "title": "Date and Time" },
+			{ "title": "Day" },
             { "title": "Value" },
             /*{ "title": "Platform" },
             { "title": "Version", "class": "center" },
             { "title": "Grade", "class": "center" }*/
-        ]
+        ],
+		"ColReorder": {
+            "Order": [0, 2, 1]
+        },
     } ); 
 };
-	 
 
+function activate_chosen() {
+    $(".chosen").chosen({disable_search_threshold: 10, width: "50%"});
+	};
 
 
 $(document).ready(function(){
     renderTree();
-	/*plot1 = renderGraph(graph.sensorlog_ids, false); This line may need not be needed, as tree changes on load
-	plot1 = listen_show_target(plot1);*/
-	renderTable();
+	activate_chosen();
+	plot1 = renderGraph(graph.sensorlog_ids, false); 
+	plot1 = listen_show_target(plot1);
+	
+	/*renderTable();*/
 });
-/*
+
 $(window).resize(function(){
 	plot1.replot( {resetAxes: true } );
 });
-*/

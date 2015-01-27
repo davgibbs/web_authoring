@@ -75,7 +75,12 @@ div.innerDivA-content, div.innerDivB-content {
 #profile_info {
 	width:400px;
 	font-family: arial,sans-serif;
-	font-size: 1.2em;
+	font-size: 1.16em;
+}
+
+#stat_text {
+	font-family: arial,sans-serif;
+	font-size: 1.0em;
 }
 
 #jstree_div {
@@ -86,6 +91,7 @@ div.innerDivA-content, div.innerDivB-content {
 	font-family: arial,sans-serif;
 	font-size: 1.2em;
 	border: 1px solid #D3D3D3;
+	overflow: auto;
 }
 
 #jstree_div_padding {

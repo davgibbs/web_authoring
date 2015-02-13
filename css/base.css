@@ -178,3 +178,48 @@ div.innerDivA-content, div.innerDivB-content {
 	float:left;
 }
 /* Navigation Styling End */
+
+/* My table styling */
+#my-table {
+  margin: 0 ;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+#my-table thead {
+  cursor: pointer;
+  background: #c9dff0;
+}
+#my-table thead tr th { 
+  font-weight: bold;
+  padding: 12px 30px;
+  padding-left: 42px;
+}
+#my-table thead tr th span { 
+  padding-right: 20px;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+
+#my-table thead tr th.headerSortUp, #my-table thead tr th.headerSortDown {
+  background: #acc8dd;
+}
+
+#my-table thead tr th.headerSortUp span {
+  background-image: url('up-arrow.png');
+}
+#my-table thead tr th.headerSortDown span {
+  background-image: url('down-arrow.png');
+}
+
+#my-table tbody tr { 
+  color: #555;
+}
+#my-table tbody tr td {
+  text-align: left;
+  padding: 2px 2px;
+  background: #ffffff;
+}
+#my-table tbody tr td.lalign {
+  text-align: left;
+}

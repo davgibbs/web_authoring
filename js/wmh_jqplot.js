@@ -119,15 +119,15 @@ function renderTable(sensorlog_ids, show_target) {
 	y_label = returned_array[2];
 	
 	$('#webmyhealth-chart').empty();
-    $('#webmyhealth-chart').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="example" style="max-width:600px"></table>' );
-    $('#example').html( '<thead><tr><th>Date and Time</th><th>' + names[0] + ' (' + y_label + ')' + '</th></tr></thead>' );
-	$('#example').append( '<tbody>' );
+    $('#webmyhealth-chart').html( '<table id="my-table"></table>' );
+    $('#my-table').html( '<thead><tr><th>Date and Time</th><th>' + names[0] + ' (' + y_label + ')' + '</th></tr></thead>' );
+	$('#my-table').append( '<tbody>' );
 	for (i = 0; i < data[0].length; i++){
-		$('#example').append('<tr><td>' + data[0][i][0] + '</td><td>' + data[0][i][1] + '</td><tr>');
+		$('#my-table').append('<tr><td>' + data[0][i][0] + '</td><td>' + data[0][i][1] + '</td><tr>');
 		}
-	$('#example').append( '</tbody>' );
+	$('#my-table').append( '</tbody>' );
 	
-    $("#example").tablesorter({
+    $("#my-table").tablesorter({
 		 dateFormat : "yyyy-mm-dd", // ?? set the default date format
 		 
 		  headers: {

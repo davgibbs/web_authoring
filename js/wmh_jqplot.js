@@ -1,6 +1,7 @@
-var graph = {
+var display = {
 	sensorlog_ids: ["2"],
 	show_target: false,
+	display_type: "graph",
 }
 
 function renderTree() {
@@ -9,13 +10,13 @@ function renderTree() {
 	);
 	// Listen for event: tree changing
 	$('#jstree_div').on("changed.jstree", function (e, data) {
-	   graph.sensorlog_ids = data.selected;
-	   /^plot1 = renderGraph(graph.sensorlog_ids, graph.show_target);*/
+	   display.sensorlog_ids = data.selected;
+	   plot1 = render_display();
 	   show_stat_text();
     });
 };
 
-function get_graph_data(sensorlog_ids, show_target) {
+function get_display_data(sensorlog_ids, show_target) {
 	if (sensorlog_ids[0] == "2" && show_target){
 		data = [data1, data1_target];
 		names = ["Daily Steps", "Daily Steps Target"];
@@ -41,7 +42,7 @@ function get_graph_data(sensorlog_ids, show_target) {
 }
 
 function renderGraph(sensorlog_ids, show_target) {
-    returned_array = get_graph_data(sensorlog_ids, show_target);
+    returned_array = get_display_data(sensorlog_ids, show_target);
 	data = returned_array[0];
 	names = returned_array[1];
 	y_label = returned_array[2];
@@ -86,7 +87,7 @@ function calculate_stat() {
 	};
 
 function show_stat_text() {
-	if(graph.show_target == true){
+	if(display.show_target == true){
 	    $('#stat_text').text('You have reached your target ' + calculate_stat() +  ' of days');
 	}
 	else {	
@@ -97,38 +98,79 @@ function show_stat_text() {
 function listen_show_target(plot1) {
 	$('#show_target_checkbox:input:checkbox').change(function(){
 		if($(this).is(':checked')){
-			graph.show_target = true;
-			plot1 = renderGraph(graph.sensorlog_ids, graph.show_target);
+			display.show_target = true;
+			plot1 = render_display();
 			show_stat_text();
 		}
 		else{
-			graph.show_target = false;
-			plot1 = renderGraph(graph.sensorlog_ids, graph.show_target);
+			display.show_target = false;
+			plot1 = render_display();
 			show_stat_text();
 		}
 	});
 	return plot1
 };
 
+function listen_change_display_type(plot1) {
+	$('#display_type_select').change(function(){
+		if($(this).val() == "table"){
+			display.display_type = "table";
+			plot1 = renderTable(display.sensorlog_ids, display.show_target);
+		}
+		else{
+			display.display_type = "graph";
+			plot1 = renderGraph(display.sensorlog_ids, display.show_target);
+		}
+	});
+	return plot1
+};
+
+function get_day_of_week(date_str) {
+	var weekday = new Array(7);
+	weekday[0]=  "Sun";
+	weekday[1] = "Mon";
+	weekday[2] = "Tue";
+	weekday[3] = "Wed";
+	weekday[4] = "Thu";
+	weekday[5] = "Fri";
+	weekday[6] = "Sat";
+	
+	milliseconds_since_epoch = Date.parse(date_str);
+	date = new Date(milliseconds_since_epoch);
+    return weekday[date.getDay()];
+}
 
 
 function renderTable(sensorlog_ids, show_target) {
-	returned_array = get_graph_data(sensorlog_ids, show_target);
+	returned_array = get_display_data(sensorlog_ids, show_target);
 	data = returned_array[0];
 	names = returned_array[1];
 	y_label = returned_array[2];
-	
+	// Table Headers
 	$('#webmyhealth-chart').empty();
     $('#webmyhealth-chart').html( '<table id="my-table"></table>' );
-    $('#my-table').html( '<thead><tr><th>Date and Time</th><th>' + names[0] + ' (' + y_label + ')' + '</th></tr></thead>' );
+	if(names.length > 1) {
+    $('#my-table').html( '<thead><tr><th>Date</th><th>Day</th><th>' + names[0] + ' (' + y_label + ')' + '</th><th>' + names[1] + ' (' + y_label + ')' + '</th></tr></thead>' );
+	}
+	else{
+    $('#my-table').html( '<thead><tr><th>Date</th><th>Day</th><th>' + names[0] + ' (' + y_label + ')' + '</th></tr></thead>' );
+	}
+	// Table Body
 	$('#my-table').append( '<tbody>' );
+	if (data.length > 1){
 	for (i = 0; i < data[0].length; i++){
-		$('#my-table').append('<tr><td>' + data[0][i][0] + '</td><td>' + data[0][i][1] + '</td><tr>');
+		$('#my-table').append('<tr><td>' + data[0][i][0] + '</td><td>' + get_day_of_week(data[0][i][0]) + '</td><td>' + data[0][i][1] + '</td><td>' + data[1][i][1] + '</td><tr>');
 		}
+	}
+	else {
+	for (i = 0; i < data[0].length; i++){
+		$('#my-table').append('<tr><td>' + data[0][i][0] + '</td><td>' + get_day_of_week(data[0][i][0]) + '</td><td>' + data[0][i][1] + '</td><tr>');
+		}
+	}
 	$('#my-table').append( '</tbody>' );
 	
     $("#my-table").tablesorter({
-		 dateFormat : "yyyy-mm-dd", // ?? set the default date format
+		 dateFormat : "yyyy-mm-dd", // set the default date format
 		 
 		  headers: {
              0: { sorter: "shortDate" }, //, dateFormat will parsed as the default above)
@@ -139,6 +181,17 @@ function renderTable(sensorlog_ids, show_target) {
 	});
 };
 
+function render_display() {
+    if (display.display_type == "table") {
+		plot1 = renderTable(display.sensorlog_ids, display.show_target);
+	}
+	else {
+	    plot1 = renderGraph(display.sensorlog_ids, display.show_target);
+	}
+	return plot1;
+		
+};
+
 function activate_chosen() {
     $(".chosen").chosen({disable_search_threshold: 10, width: "50%"});
 	};
@@ -147,12 +200,14 @@ function activate_chosen() {
 $(document).ready(function(){
     renderTree();
 	activate_chosen();
-	/*plot1 = renderGraph(graph.sensorlog_ids, false); 
-	plot1 = listen_show_target(plot1);*/
-	
-	renderTable(graph.sensorlog_ids, false);
+	// Return the plot to allow resizing of the graph
+	plot1 = renderGraph(display.sensorlog_ids, display.show_target); 
+	plot1 = listen_show_target(plot1);
+	plot1 = listen_change_display_type(plot1);
 });
 
 $(window).resize(function(){
-	plot1.replot( {resetAxes: true } );
+	if (display.display_type == "graph") {
+	    plot1.replot( {resetAxes: true } );
+	}
 });

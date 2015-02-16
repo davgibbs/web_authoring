@@ -18,22 +18,22 @@ function renderTree() {
 
 function get_display_data(sensorlog_ids, show_target) {
 	if (sensorlog_ids[0] == "2" && show_target){
-		data = [data1, data1_target];
+		data = [data_steps, data_steps_target];
 		names = ["Daily Steps", "Daily Steps Target"];
 		y_label = "steps";
 	}
 	else if (sensorlog_ids[0] == "3" && show_target){
-		data = [data2, data2_target];
+		data = [data_active, data_active_target];
 		names = ["Daily Active Minutes", "Daily Active Minutes Target"];
 		y_label = "mins";
 	}
 	else if (sensorlog_ids[0] == "2"){
-		data = [data1];
+		data = [data_steps];
 		names = ["Daily Steps"];
 		y_label = "steps";
 	}
 	else if(sensorlog_ids[0] == "3"){
-		data = [data2];
+		data = [data_active];
 		names = ["Daily Active Minutes"];
 		y_label = "mins";
 	}
@@ -82,7 +82,7 @@ function calculate_stat() {
 			total += 1;
 		}
 
-		percentage = reached_target / total * 100.0;
+		percentage = Math.round(reached_target / total * 100.0);
 		return percentage + "%";
 	};
 
@@ -148,7 +148,8 @@ function renderTable(sensorlog_ids, show_target) {
 	y_label = returned_array[2];
 	// Table Headers
 	$('#webmyhealth-chart').empty();
-    $('#webmyhealth-chart').html( '<table id="my-table"></table>' );
+    $('#webmyhealth-chart').html( '<div id="my-table-div"></div>' );
+    $('#my-table-div').append( '<table id="my-table"></table>' );
 	if(names.length > 1) {
     $('#my-table').html( '<thead><tr><th>Date</th><th>Day</th><th>' + names[0] + ' (' + y_label + ')' + '</th><th>' + names[1] + ' (' + y_label + ')' + '</th></tr></thead>' );
 	}
@@ -156,7 +157,7 @@ function renderTable(sensorlog_ids, show_target) {
     $('#my-table').html( '<thead><tr><th>Date</th><th>Day</th><th>' + names[0] + ' (' + y_label + ')' + '</th></tr></thead>' );
 	}
 	// Table Body
-	$('#my-table').append( '<tbody>' );
+	$('#my-table').append( '<tbody>' );      
 	if (data.length > 1){
 	for (i = 0; i < data[0].length; i++){
 		$('#my-table').append('<tr><td>' + data[0][i][0] + '</td><td>' + get_day_of_week(data[0][i][0]) + '</td><td>' + data[0][i][1] + '</td><td>' + data[1][i][1] + '</td><tr>');
@@ -170,12 +171,6 @@ function renderTable(sensorlog_ids, show_target) {
 	$('#my-table').append( '</tbody>' );
 	
     $("#my-table").tablesorter({
-		 dateFormat : "yyyy-mm-dd", // set the default date format
-		 
-		  headers: {
-             0: { sorter: "shortDate" }, //, dateFormat will parsed as the default above)
-          },
-		 
 	    // Initially sort on the first column, order descending
 		sortList: [[0,1]]
 	});

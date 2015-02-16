@@ -180,6 +180,13 @@ div.innerDivA-content, div.innerDivB-content {
 /* Navigation Styling End */
 
 /* My table styling */
+#my-table-div {
+  height: -moz-calc(100% - 0px);
+  height: -webkit-calc(100% - 0px);
+  height: calc(100% - 0px);
+  overflow-y: scroll;
+}
+
 #my-table {
   margin: 0 ;
   font-size: 1.2em;

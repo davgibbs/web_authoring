@@ -191,6 +191,9 @@ function activate_chosen() {
     $(".chosen").chosen({disable_search_threshold: 10, width: "50%"});
 	};
 
+function show_tooltip() {
+	$(this).tooltip({});
+	};
 
 $(document).ready(function(){
     renderTree();

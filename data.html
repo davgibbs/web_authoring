@@ -23,7 +23,7 @@
 <!-- My Files -->
 <script type="text/javascript" src="./js/set_active.js"></script>
 <script type="text/javascript" src="./js/wmh_jqplot.js"></script>
-<link rel="stylesheet" type="text/css" href="css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/data.css" />
 <!-- Data Files -->
 <script type="text/javascript" src="./js/data_dir/treedata.js"></script>
 <script type="text/javascript" src="./js/data_dir/data_active.js"></script>
@@ -35,12 +35,14 @@
 <body>
 	<header>
 		<div id="wmh_logo">
-			<img src="images/wmh_transparent.png" alt="Web My Health Logo" height="30" width="158"> <!--resize image-->
+			<a href="./base.html"><img src="images/wmh_transparent.png" alt="Web My Health Logo" height="30" width="158" ></a> <!--resize image-->
 		</div>
         <div id="navigation">
             <ul>
-                <li><a href="./base.html">Home</a></li>
-                <li><a href="./contact_us.html">About</a></li>
+				<li><a href="./home.html">Home</a></li>
+                <li><a href="./data.html">Data</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact_us.html">Contact Us</a></li>
             </ul>
         </div>
 	</header>
@@ -51,7 +53,7 @@
                 <div class="innerDivA-content">
                     <div id="profile_pic">
                     	<div id="profile_pic_padding">
-                            <img src="images/david_profile.jpg" alt="Profile Picture" height="200" width="200">
+                            <img src="images/david_profile.jpg" alt="Profile Picture" height="200" width="200" title="David Gibbons" onhover="show_tooltip()">
                         </div>
                     </div>
                     <div id="jstree_div_padding">

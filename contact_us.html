@@ -7,6 +7,7 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- my Files -->
 <script type="text/javascript" src="./js/set_active.js"></script>
+<script type="text/javascript" src="./js/validate_contact_us_form.js"></script>
 <link rel="stylesheet" type="text/css" href="css/base.css" />
 </head>
 
@@ -17,13 +18,76 @@
 		</div>
         <div id="navigation">
             <ul>
-                <li><a href="file:///C:/Users/dgibbons/Desktop/web_authoring/base.html">Home</a></li>
-                <li><a href="file:///C:/Users/dgibbons/Desktop/web_authoring/contact_us.html">About</a></li>
+				<li><a href="./home.html">Home</a></li>
+                <li><a href="./data.html">Data</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact_us.html">Contact Us</a></li>
             </ul>
         </div>
-	</header>
+	</header>  
     <section>
-    </section> 
+  <div id="leave_message">
+  <h2>Please leave us a message!</h2>
+  <p>Interested in our website? Please leave us a message via the form below and we will get back to you as soon as possible!</p>
+  <br>
+  <form>
+  <table id="message-table">
+      <tr>
+          <td><label>Name</label></td>
+      </tr>
+      <tr>
+          <td><input type="text" name="textfield" id="fullName" autofocus></td>
+	  </tr>
+      <tr>
+          <td><label id="fullNameLabel" class="errorMessage"></label></td>
+      </tr>
+      <tr>
+          <td><label>Email Address</label></td>
+      </tr>
+      <tr> 
+          <td><input type="text" name="textfield2" id="emailAddress"></td>
+      </tr>
+      <tr>
+          <td><label id="emailAddressLabel" class="errorMessage"></label></td>
+      </tr>
+      <tr>
+          <td><label>Message</label></td>
+      </tr>
+      <tr>
+          <td><textarea name="textarea" id="commentText"></textarea></td>
+      </tr>
+      <tr>
+          <td><label id="commentLabel" class="errorMessage"></label></td>
+      </tr>
+      <tr>
+           <td><input type="submit" value="Send" onClick="return validateForm()"></td>
+      </tr>
+  </table>
+  </form>
+  </div>
+  
+  <div id="google_map">
+  <iframe
+    width="100%"
+    height="100%"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCnQbVPR3JDOpOJ-z0zaoGn2UAx9rpWmQQ
+      &q=Blackrock+Further+Education+Institute
+      &attribution_source=Google+Maps+Embed+API
+      &attribution_web_url=http://www.bfei.com/
+      &attribution_ios_deep_link_id=comgooglemaps://?daddr=Blackrock+Further+Education+Institute">
+  </iframe>
+  <div>
+  
+  </section>
+      <aside>
+    <p><h1>Contact</h1><br><strong>Blackrock College of Further Education</strong><br>Phone: 00-123-34567<br><br><br>Main Street<br>Blackrock<br>Co Dublin<br>IRELAND<br><br><br>Further Information at <a href="http://www.bfei.ie">http://www.bfei.ie</a>
+    <br></p>
+    </aside> 
+    
+    
+    
+    
 
     <footer>
         Copyright © WebMyHealth

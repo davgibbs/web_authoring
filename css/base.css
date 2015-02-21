@@ -4,7 +4,6 @@
 * {  
 	margin: 0 auto;  
 	padding: 0 auto;  
-	text-align: center;
 	font-family: "Arial", Georgia, Serif;
 }
 /* Outer Element */
@@ -23,28 +22,13 @@ header {
 	width: 100%;
 }
 
-aside {
-	background-color:#903;
-	padding-bottom:25px;
-	height: 100%;
-	float: left;
-	width: 23%;
+section {
+	width: 80%;
+	margin-left: 10%;
 	margin-right: 10%;
-	margin-top: 5%;
-	margin-left: 5%;
-	text-align:right;
-	padding-right: 2%;
-	padding-top: 1%;
+	margin-top: 3%;
 }
 
-section {
-	background-color:#CF0;
-	height: 500px;
-	float: left;
-	width: 50%;
-	margin-left: 10%;
-	margin-top: 5%;
-}
 footer {
     background-color:yellow;
     color:blue;
@@ -57,6 +41,7 @@ footer {
 }
 /* Outer Element End */
 
+/* Logo and Navigation Styling */
 #wmh_logo {
 	text-align:left;
 	height:30px;
@@ -65,8 +50,6 @@ footer {
 	padding-left: 8px;
 }
 
-
-/* Navigation Styling */
 #navigation ul {
     list-style-type: none;
     margin: 0;
@@ -103,42 +86,53 @@ footer {
 }
 /* Navigation Styling End */
 
-
-#google_map{
+/* Contact Us page*/
+#leave_message{
+	width: 32.5%;
+	height: 480px;
 	padding-top: 20px;
 	float: left;
-	width: 50%;
-	height: 440px;
+	background-color: #D3D3D3;
 }
 
-#leave_message{
-	width: 45%;
+#google_map{
+	width: 27.5%;
+	height: 480px;
+	padding-top: 20px;
 	float: left;
+	background-color: #D3D3D3;
+}
+
+#contact_info {
+	width: 25%;
+	height: 340px;
+	padding-top: 20px;
+	float: left;
+	background-color: #D3D3D3;
+	margin-left: 15%;
+	text-align:right;	
 }
 
 .errorMessage{
 	color:red;
 }
 
-p{
+#leave_message p{
 	padding-left: 5%;
 	padding-right: 5%;
 	text-align: left;
 }
 
-input, textarea {
-	text-align: left;
-}
-
-h1 {
+#leave_message h1 {
 	text-align:right;
 }
 
-h2 {
+#leave_message h2 {
 	padding-top:30px;
+	text-align: center;
 }
 
-td {
+#leave_message td {
 	text-align: left;
 	width: 100%;
 }
@@ -148,3 +142,14 @@ td {
 	padding: 20px;
 	width: 100%;
 }
+
+#commentText {
+	width: 70%;
+	height: 100px;
+}
+
+/* Contact Us Page End */
+
+/* Blog Page */
+
+/* Blog Page End */

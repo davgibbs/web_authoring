@@ -3,9 +3,9 @@ function _setActive(aObj, document_location) {
     if(document_location === aObj[i].href) {
       aObj[i].className='active';
     }
-	
-	// A url with "blog" should highlight that link
-    if(document_location.indexOf("blog") !== -1 && aObj[i].href.indexOf("blog") !== -1)    {
+
+	// A url with "/blog/" should highlight that link
+    if(document_location.indexOf("/blog/") !== -1 && aObj[i].href.indexOf("blog") !== -1)    {
       aObj[i].className='active';
     }
   }

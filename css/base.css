@@ -147,7 +147,6 @@ footer {
 	width: 70%;
 	height: 100px;
 }
-
 /* Contact Us Page End */
 
 /* Blog Page */
@@ -160,3 +159,27 @@ footer {
     font-size: 1.5em;
 }
 /* Blog Page End */
+
+/* Comparison Blog Page */
+
+
+/* Comparison Blog Page End */
+
+/* Individual Wearables */
+#back-link {
+	width: 10%;
+	float: left;
+}
+
+#device-text {
+	width: 70%;
+	float: left;
+}
+
+#device-image {
+	width: 20%;
+	float: left;
+}
+/* Individual Wearables End */
+
+

@@ -48,7 +48,9 @@ function renderGraph(sensorlog_ids, show_target) {
 	y_label = returned_array[2];
 
 	my_axes = {xaxis: { renderer:$.jqplot.DateAxisRenderer, label: "Date"},
-	           yaxis: { label: y_label,}}
+	           yaxis: { label: y_label, padMin: 0, tickOptions: {formatString: "%'d"} }}
+			   
+			   
 
 	var wmh_series = new Array();
     for (i = 0; i < names.length; i++) { 
@@ -68,7 +70,7 @@ function renderGraph(sensorlog_ids, show_target) {
 							
 	$('#webmyhealth-chart').empty();
 	var plot1 = $.jqplot('webmyhealth-chart', data, my_options);
-
+    
 	return plot1;
 };
 
@@ -140,7 +142,6 @@ function get_day_of_week(date_str) {
     return weekday[date.getDay()];
 }
 
-
 function renderTable(sensorlog_ids, show_target) {
 	returned_array = get_display_data(sensorlog_ids, show_target);
 	data = returned_array[0];
@@ -151,23 +152,23 @@ function renderTable(sensorlog_ids, show_target) {
     $('#webmyhealth-chart').html( '<div id="my-table-div"></div>' );
     $('#my-table-div').append( '<table id="my-table"></table>' );
 	if(names.length > 1) {
-    $('#my-table').html( '<thead><tr><th>Date</th><th>Day</th><th>' + names[0] + ' (' + y_label + ')' + '</th><th>' + names[1] + ' (' + y_label + ')' + '</th></tr></thead>' );
-	}
+		$('#my-table').html( '<thead><tr><th>Date</th><th>Day</th><th>' + names[0] + '</th><th>' + names[1] + '</th></tr></thead>' );
+		}
 	else{
-    $('#my-table').html( '<thead><tr><th>Date</th><th>Day</th><th>' + names[0] + ' (' + y_label + ')' + '</th></tr></thead>' );
-	}
+		$('#my-table').html( '<thead><tr><th>Date</th><th>Day</th><th>' + names[0] + '</th></tr></thead>' );
+		}
 	// Table Body
 	$('#my-table').append( '<tbody>' );      
 	if (data.length > 1){
-	for (i = 0; i < data[0].length; i++){
-		$('#my-table').append('<tr><td>' + data[0][i][0] + '</td><td>' + get_day_of_week(data[0][i][0]) + '</td><td>' + data[0][i][1] + '</td><td>' + data[1][i][1] + '</td><tr>');
+		for (i = 0; i < data[0].length; i++){
+			$('#my-table').append('<tr><td>' + data[0][i][0] + '</td><td>' + get_day_of_week(data[0][i][0]) + '</td><td class="value-cell">' + data[0][i][1].toLocaleString() + '</td><td class="value-cell">' + data[1][i][1].toLocaleString() + '</td><tr>');
+			}
 		}
-	}
 	else {
-	for (i = 0; i < data[0].length; i++){
-		$('#my-table').append('<tr><td>' + data[0][i][0] + '</td><td>' + get_day_of_week(data[0][i][0]) + '</td><td>' + data[0][i][1] + '</td><tr>');
+		for (i = 0; i < data[0].length; i++){
+			$('#my-table').append('<tr><td>' + data[0][i][0] + '</td><td>' + get_day_of_week(data[0][i][0]) + '</td><td class="value-cell">' + data[0][i][1].toLocaleString() + '</td><tr>');
+			}
 		}
-	}
 	$('#my-table').append( '</tbody>' );
 	
     $("#my-table").tablesorter({

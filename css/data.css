@@ -224,10 +224,15 @@ div.innerDivA-content, div.innerDivB-content {
   color: #555;
 }
 #my-table tbody tr td {
-  text-align: left;
   padding: 2px 2px;
   background: #ffffff;
 }
+
 #my-table tbody tr td.lalign {
   text-align: left;
 }
+
+.value-cell {
+    text-align: right;
+}
+/* My table styling End */

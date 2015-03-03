@@ -173,6 +173,9 @@ footer {
 #blog_content {
     margin-top: 10px;
 	background-color: white;
+	padding: 30px;
+	border-radius: 25px;
+	height:inherit;
 }
 
 #blog_content p {
@@ -185,7 +188,14 @@ footer {
     display:block;
 }
 
+video {
+	display:block;
+	margin:0 auto;
+}
 
+#five_wearables_map area {
+   outline: none;  
+}
 /* Individual Blog Page End */
 
 /* Individual Wearables */
@@ -208,7 +218,6 @@ footer {
 
 #device-image {
     width: 260px;
-	/*height: 100px;*/
 	float: left;
 	margin-left: 10px;
 }
@@ -220,3 +229,8 @@ footer {
 	cell-padding:20px;
 }
 /* Comparison Blog End*/
+
+
+.clear{
+	clear:both;
+}

@@ -3,12 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Home | WebMyHealth</title>
-<!-- CSS File -->
+<!-- My CSS File -->
 <link rel="stylesheet" type="text/css" href="css/base.css" />
 <!-- JQuery -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include the "basic slider" plugin *after* the jQuery library and it's styles -->
+<script src="./js/basic_slider/basic-jquery-slider-master/js/bjqs-1.3.min.js"></script>
+<link type="text/css" rel="Stylesheet" href="./js/basic_slider/basic-jquery-slider-master/bjqs.css" />
+<link type="text/css" rel="Stylesheet" href="./js/basic_slider/basic-jquery-slider-master/demo.css" />
 <!-- my Files -->
 <script type="text/javascript" src="./js/set_active.js"></script>
+<script type="text/javascript" src="./js/banner.js"></script>
 </head>
 
 <body>
@@ -26,15 +31,24 @@
         </div>
 	</header>
     <section>
-	    <h2>Home</h2>
-        <p> Welcome to WebMyHealth! This is a website which tries to encourage users to track their own health on the World Wide Web. This way it is easily accessible to you anywhere you go! And to your doctors, physiotherapists, nuitrionists, caring family members, etc. </p>
+        <!-- Outer wrapper for slideshow -->
+        <div id="my-slideshow">
+            <!-- start Basic Jquery Slider -->
+            <ul class="bjqs">
+                <li><img src="images/gps-child-tracking-device-wrist.jpg" title="Connected Health"></li>
+                <li><img src="images/connected.jpg" title="Linked Health"></li>
+            </ul>
+            <!-- end Basic jQuery Slider -->
+        </div>
+        <!-- End outer wrapper -->
+    
+        <div id="home_content">
+            <p>Welcome to WebMyHealth! This is a website which tries to encourage users to track their own health on the World Wide Web. This way it is easily accessible to you anywhere you go! And to your doctors, physiotherapists, nuitrionists, caring family members, etc. </p>
         
-        <p>
-        On this website you can find a blog examining various aspects of this <i>health tracking</i> area. This is an exciting and growing market. 
-        </p> 
+            <p>On this website you can find a blog examining various aspects of this <i>health tracking</i> area. This is an exciting and growing market.</p> 
         <p>Specifically we look into the area of using wearable devices to track your activity during the day.</p>
         
-        <h2>Naviagtion</h2>
+        <h2>Website Navigation</h2>
         <p>Within this site, there are 4 main pages: "Home", "Data", "Blog" and "Contact Us". Within the blog page a blog entries which may contain further sublinks. and 5 sub pages (fitbit flex, nike fuelband, withings pulse, Jawbone Up, and Basis B1)</p>
         
         <p>This home page contains overview information on the the five companies discussed in this website. Fitbit headquartered in San Francisco California leads the way.</p>
@@ -84,7 +98,8 @@ Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
         
         Site Map....
         
-        
+        </p>
+        </div><!-- End of Home Content -->
     </section> 
     <footer>
         Copyright © WebMyHealth

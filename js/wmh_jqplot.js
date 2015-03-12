@@ -27,6 +27,16 @@ function get_display_data(sensorlog_ids, show_target) {
 		names = ["Daily Active Minutes", "Daily Active Minutes Target"];
 		y_label = "mins";
 	}
+    else if (sensorlog_ids[0] == "4" && show_target){
+		data = [data_calories, data_calories_target];
+		names = ["Daily Calories Burned", "Daily Calories Burned Target"];
+		y_label = "kcal";
+	}
+	else if (sensorlog_ids[0] == "5" && show_target){
+		data = [data_distance, data_distance_target];
+		names = ["Daily Distance", "Daily Distance Target"];
+		y_label = "km";
+	}
 	else if (sensorlog_ids[0] == "2"){
 		data = [data_steps];
 		names = ["Daily Steps"];
@@ -36,6 +46,16 @@ function get_display_data(sensorlog_ids, show_target) {
 		data = [data_active];
 		names = ["Daily Active Minutes"];
 		y_label = "mins";
+	}
+	else if(sensorlog_ids[0] == "4"){
+		data = [data_calories];
+		names = ["Daily Calories Burned"];
+		y_label = "kcal";
+	}
+	else if(sensorlog_ids[0] == "5"){
+		data = [data_distance];
+		names = ["Daily Distance"];
+		y_label = "km";
 	}
 	
 	return [data, names, y_label]

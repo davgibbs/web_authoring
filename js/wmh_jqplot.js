@@ -193,8 +193,9 @@ function renderTable(sensorlog_ids, show_target) {
 	
     $("#my-table").tablesorter({
 	    // Initially sort on the first column, order descending
-		sortList: [[0,1]]
+		sortList: [[0,1]],
 	});
+
 };
 
 function render_display() {

@@ -1,4 +1,4 @@
-tablesorter is a jQuery plugin for turning a standard HTML table with THEAD and TBODY tags into a sortable table without page refreshes.
+tablesorter (FORK) is a jQuery plugin for turning a standard HTML table with THEAD and TBODY tags into a sortable table without page refreshes.
 tablesorter can successfully parse and sort many types of data including linked data in a cell.
 
 ### Notice!
@@ -39,16 +39,33 @@ tablesorter can successfully parse and sort many types of data including linked 
 * Original examples and docs at: [http://tablesorter.com](//tablesorter.com).
 * Dual licensed under the [MIT](//www.opensource.org/licenses/mit-license.php) and [GPL](//www.gnu.org/licenses/gpl.html) licenses.
 
+### Download
+
+* Get [all files](https://github.com/Mottie/tablesorter/archive/master.zip)
+* Use [bower](http://bower.io/): `bower install jquery.tablesorter`
+* Use [node.js](http://nodejs.org/): `npm install tablesorter`
+* CDNJS: [https://cdnjs.com/libraries/jquery.tablesorter](https://cdnjs.com/libraries/jquery.tablesorter)
+
 ### Related Projects
 
 * [Plugin for Rails](//github.com/themilkman/jquery-tablesorter-rails). Maintained by [themilkman](//github.com/themilkman).
-* [PHP templating engine for tablesorter](//github.com/alexweissman/bootsole) by [alexweissman](//github.com/alexweissman).
+* [Bootsole](//alexweissman.github.io/bootsole/) (OOP templating engine using tablesorter) by [alexweissman](//github.com/alexweissman).
+
+### Contributing
+
+If you would like to contribute, please...
+
+1. Fork.
+2. Make changes in a branch & add unit tests.
+3. Run `grunt test` (if qunit fails, run it again - it's fickle).
+4. Create a pull request.
 
 ### Special Thanks
 
 * Big shout-out to [Nick Craver](//github.com/NickCraver) for getting rid of the `eval()` function that was previously needed for multi-column sorting.
 * Big thanks to [thezoggy](//github.com/thezoggy) for helping with code, themes and providing valuable feedback.
 * Big thanks to [ThsSin-](//github.com/TheSin-) for taking over for a while and also providing valuable feedback.
+* Thanks to [prijutme4ty](https://github.com/prijutme4ty) for numerous contributions!
 * Also extra thanks to [christhomas](//github.com/christhomas) and [Lynesth](//github.com/Lynesth) for help with code.
 * And, of course thanks to everyone else that has contributed, and continues to contribute to this forked project!
 
@@ -61,98 +78,69 @@ tablesorter can successfully parse and sort many types of data including linked 
 * Ask your question at [Stackoverflow](//stackoverflow.com/questions/tagged/tablesorter) using a tablesorter tag.
 * Please don't open a [new issue](//github.com/Mottie/tablesorter/issues) unless it really is an issue with the plugin, or a feature request. Thanks!
 
-### Change Log
+### Recent Changes
 
-View the [complete listing here](//github.com/Mottie/tablesorter/wiki/Changes).
+View the [complete change log here](//github.com/Mottie/tablesorter/wiki/Changes).
 
-#### <a name="v2.17.8">Version 2.17.8</a> (9/15/2014)
+#### <a name="v2.21.2">Version 2.21.2</a> (3/13/2015)
+
+* Core: get accurate column count. Fixes [issue #840](https://github.com/Mottie/tablesorter/issues/840).
+* Docs
+  * Update to use jQuery UI v1.11.4.
+  * Add note about resizable widget needing a non-breaking space in an empty cell. Fixes [issue #844](https://github.com/Mottie/tablesorter/issues/844).
+* Editable: fix editable not updating properly on update/pager complete.
+* Filter: prevent error if `parseFilter` returns `NaN` - this depends on what custom parsers return.
+* Output: change carriage returns & tabs to unicode equivalent so it works in Excel. Fixes [issue #845](https://github.com/Mottie/tablesorter/issues/845).
+* Pager
+  * Don't recalculate total rows/pages if using ajax.
+  * Remove outdated pager.min file in the `addons` folder; it is now available in the `dist/js/extras` folder.
+* Uitheme: add icon classes while using stickyHeaders. See [issue #842](https://github.com/Mottie/tablesorter/issues/842).
+
+#### <a name="v2.21.1">Version 2.21.1</a> (3/10/2015)
+
+* Core:
+  * Optimize `getColumnData` function.
+  * Use `:last` instead of `.last()` to maintain jQuery v1.2.6 compatibility.
+  * Allow multiple icon class names in the `cssIcon` definition.
+* Docs
+  * Remove initial sort on first table to avoid confusion.
+  * Miscellaneous tweaks.
+* Build
+  * Add UMD wrapper to built "jquery.tablesorter.widgets.js" file. Thanks to [nburlett](https://github.com/nburlett) ([pull #837](https://github.com/Mottie/tablesorter/pull/837))!
+* Scroller
+  * Properly adjust column widths; fixes [issue #836](https://github.com/Mottie/tablesorter/issues/836).
+
+#### <a name="v2.21.0">Version 2.21.0</a> (3/5/2015)
 
 * Core
-  * Fix `widthFixed` option to ignore info block tbodies.
-  * Make `emptyTo` & `stringTo` settings case insensitive.
-  * An empty string `headerTemplate` option will now prevent adding an inner div to the header.
+  * Plan to manually update vesion number.
+  * Optimizations: replace arrays using `$.each` with for loops. Fixes [issue #827](https://github.com/Mottie/tablesorter/issues/827).
+  * Add `$.tablesorter.addInstanceMethods` function.
+    * This allows one to define config object instance methods ([docs](http://mottie.github.io/tablesorter/docs/#variable-instanceMethods)).
+    * Thanks to [prijutme4ty](https://github.com/prijutme4ty) for contributing!
+  * Add `config.$headerIndexed` option ([docs](http://mottie.github.io/tablesorter/docs/#variable-header-indexed)).
 * Docs
-  * Fix setting active accordion from hash script.
-  * Add `emptyTo` clarification.
-  * Main readme: Add related projects section.
-* Editable
-  * Autoresort true no longer breaks the table.
-  * Update demo to use row id instead of index.
-  * Update validate function to allow setting it per column.
-  * Add `editable_focus`, `editable_blur` and `editable_selectAll` options. See [issue #708](//github.com/Mottie/tablesorter/issues/708).
-  * Add `editable_wrapContent` option.
-  * Add `editable_trimContent` option.
-  * Validate function now includes a contenteditable element parameter.
-  * All text callback parameters are now trimmed.
-  * Trim everything & revert widget changes.
-  * Refocus edited element after resort only.
-  * Switch form focus to focusout.
+  * Update link in readme.
+  * Add contributing information.
+  * Update download method information.
+* Build/Testing
+  * Move jshint to "grunt test" task.
+  * Attempt to make nested callbacks more stable.
+  * Clean up testing & made more stable, by [prijutme4ty](https://github.com/prijutme4ty).
+* ColumnSelector
+  * Add more debug logging.
 * Filter
-  * Add `filter_defaultFilter` option.
-      * fix issue with using class selectors.
-      * Make happy with spaces within the query.
-      * Will override exact/partial select filters. Fixes [issue #721](//github.com/Mottie/tablesorter/issues/721).
-      * Fixes [issue #704](//github.com/Mottie/tablesorter/issues/704).
-  * Add `filter_excludeFilter` option; add multiple exclusions separated by spaces, not commas.
-  * Prevent multiple searches during initialization.
-  * Ensure initial filter settings get applied.
-  * Selects will exactly match the selected option unless "filter-match" class is set. Fixes [issue #721](//github.com/Mottie/tablesorter/issues/721).
+  * Add more debug logging.
+  * Add `config` parameter to `filter_functions`.
+  * Add "widget-filter-type-insideRange.js" filter type; this filter type allows searching for a value that is within a range ([demo](http://mottie.github.io/tablesorter/docs/example-parsers-date-range.html)).
+  * External filters can now set initial values; this includes match-any-column inputs.
+  * Extend filterFormatter functions - fixes an issue where HTML5 &amp; jQuery ui filterFormatters override the function definitions.
+* Output
+  * Add `output_includeFooter` option.
 * Pager
-  * Update cache & rows copy. Fixes [issue #703](//github.com/Mottie/tablesorter/issues/703).
-  * Use native javascript to populate & set the goto select. Fixes [issue #711](//github.com/Mottie/tablesorter/issues/711).
-  * Custom pager controls. Fix control updates for multiple tables.
-  * Fix pager widget to be properly applied after a page move.
-* StickyHeaders: Fix issue so it works with jQuery v1.2.6 again.
-* Zebra: Apply style to one row. Fixes [issue #715](//github.com/Mottie/tablesorter/issues/715).
-* Parser
-  * Duration parser - added with [demo](//mottie.github.io/tablesorter/docs/example-parsers-duration.html).
-  * Select parser - Fix for IE10+ not allowing select options to be clicked.
-  * IgnoreArticles parser - Added `ignoreArticlesExcept` option.
-  * url parser - ensure it is used by the filter widget.
-
-#### <a name="v2.17.7">Version 2.17.7</a> (8/9/2014)
-
-* Core: Do not detach rows before appending to prevent ajax rows from disappearing. Fixes [issue #701](//github.com/Mottie/tablesorter/issues/701).
-* Docs: Fix change log links.
-* Filter: attached external select causing javascript errors. Fixes [issue #702](//github.com/Mottie/tablesorter/issues/702)
-
-#### <a name="v2.17.6">Version 2.17.6</a> (8/1/2014)
-
-* Core
-  * Adding a class name of `parser-false` to a column will now automatically set `sorter-false` and `filter-false` behavior.
-  * Add extractor type which allows giving a column two parsers, one to extract content from an input/select and the second to parse the extracted text. Thanks to [TheSin-](//github.com/TheSin-)!
-  * Ensure custom parsed data adheres to the `ignoreCase` option.
-  * Add a delay to any sort if there is an update in progress. This prevents issues with a sort being applied causing duplicate rows to be added to the table, hopefully.
-  * The `widthFixed` option now finds both visible `th` and `td` cells within the first row of the tbody to set column width percentages.
-  * Ensure all rows have a set role for screen readers (`role="row"`). Fixes [issue #690](//github.com/Mottie/tablesorter/issues/690).
-  * Redefine `c.$headers` when building headers for new/replaced header cells (not just content). Fixes [issue #683](//github.com/Mottie/tablesorter/issues/683).
-* Docs
-  * Fixed lots of minor HTML issues (e.g. missing closing `</li>` &amp; `<p>` tags)
-* Parsers
-  * Add parser for textareas within the `parser-input-select.js` file.
-  * Modify input &amp; textarea parser to only update the table cache when:
-      * The user presses enter (input) or alt + enter (textarea) within the element.
-      * When the element is blurred.
-      * Or, when the mouse leaves the tbody.
-* Editable
-  * Add two new options:
-      * `editable_autoAccept`: accepts any changes made to the table cell automatically (`true` by default)
-      * `editable_validate`: a function used to validate the changes; return a valid string (`null` by default)
-  * Modify `editable_columns` type check to prevent javascript errors. See [pull #688](//github.com/Mottie/tablesorter/issues/688). Thanks [scratcher28](//github.com/scratcher28)!
-  * Limit the `editable_columns` array value to columns within the table.
-* Filter
-  * Make all options show within the current select when the `filter-onlyAvail` class is set on a column.
-  * Updated &amp; added docs for `$.tablesorter.filter.buildSelect` function to allow external calls to modify filter select options.
-  * Update `filter_selectSource` to accept arrays instead of a function. This was documented as working, but it wasn't coded until now. Sorry!
-  * Add `filter_selectSourceSeparator` option:
-      * Include a separator within the `filter_selectSource` array (e.g. "a-z|A through Z").
-      * The text that is left of the separator is added to the option value, the the text on the right is added to the option text.
-      * So `"a-z|A through Z"` becomes `<option value="a-z">A through Z</option>`.
-      * Fixes [issue #692](//github.com/Mottie/tablesorter/issues/692).
-  * Add `role="row"` to the filter row. Fixes [issue #697](//github.com/Mottie/tablesorter/issues/697).
-  * Any match inputs now follow the `filter_startsWith` setting. See [this Stackoverflow](//stackoverflow.com/q/25070448/145346) question.
-* Pager
-  * The `ouput` option can now include user modifiable `startRow` (`{startRow:input}`) or `page` (`{page:input}`) inputs within the output.
-  * Remove selected attribute from page selector options. Fixes [issue #700](//github.com/Mottie/tablesorter/issues/700).
-* Resizable
-  * Update `$.tablesorter.addHeaderResizeEvent` function's first parameter `table` to accept table DOM elements as well as jQuery objects. Fixes [issue #687](//github.com/Mottie/tablesorter/issues/687).
+  * Add more debug logging.
+* Scroller
+  * Add missing `tfoot` rows. Fixes [issue #825](https://github.com/Mottie/tablesorter/issues/825).
+* StickyHeaders
+  * Now works properly with a full-height wrapper. Fixes [issue #564](https://github.com/Mottie/tablesorter/issues/564).
+  * Add stickyHeader hidden class name & modal demo links. Fixes [issue #832](https://github.com/Mottie/tablesorter/issues/832).

@@ -37,7 +37,7 @@
 }
 
 /* bootstrap uses <i> for icons */
-.tablesorter-bootstrap .tablesorter-header i {
+.tablesorter-bootstrap .tablesorter-header i.tablesorter-icon {
 	position: absolute;
 	right: 2px;
 	top: 50%;
@@ -60,14 +60,14 @@
 }
 
 /* since bootstrap (table-striped) uses nth-child(), we just use this to add a zebra stripe color */
-.tablesorter-bootstrap tr.odd td {
+.tablesorter-bootstrap tr.odd > td {
 	background-color: #f9f9f9;
 }
 .tablesorter-bootstrap tbody > .odd:hover > td,
 .tablesorter-bootstrap tbody > .even:hover > td {
 	background-color: #f5f5f5;
 }
-.tablesorter-bootstrap tr.even td {
+.tablesorter-bootstrap tr.even > td {
 	background-color: #fff;
 }
 
@@ -84,7 +84,8 @@ caption {
 }
 
 /* filter widget */
-.tablesorter-bootstrap .tablesorter-filter-row .tablesorter-filter {
+.tablesorter-bootstrap .tablesorter-filter-row input.tablesorter-filter,
+.tablesorter-bootstrap .tablesorter-filter-row select.tablesorter-filter {
 	width: 98%;
 	margin: 0 auto;
 	padding: 4px 6px;
@@ -101,6 +102,9 @@ caption {
 .tablesorter-bootstrap .tablesorter-filter-row .tablesorter-filter.disabled {
 	background: #eee;
 	cursor: not-allowed;
+}
+.tablesorter-bootstrap .tablesorter-filter-row {
+	background: #eee;
 }
 .tablesorter-bootstrap .tablesorter-filter-row td {
 	background: #eee;
@@ -119,7 +123,7 @@ caption {
 	margin: 0;
 	line-height: 0;
 }
-.tablesorter-bootstrap .tablesorter-filter-row.hideme .tablesorter-filter {
+.tablesorter-bootstrap .tablesorter-filter-row.hideme * {
 	height: 1px;
 	min-height: 0;
 	border: 0;

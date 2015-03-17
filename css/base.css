@@ -188,14 +188,15 @@ footer {
 	color: #036;	
 }
 
-#blog_content #blog_list p  {
+#blog_content #blog_list li p  {
 	text-align: center;
-    font-size: 1.1em;
+    font-size: 0.9em;
 }
 
 #blog_content #blog_list li {
 	text-align: center;
     font-size: 1.3em;
+    list-style-type: none;
 }
 
 /* Blog Page End */
@@ -259,7 +260,7 @@ video {
 /* Comparison Blog */
 #five_comp_table {
 	border-color: #000;
-	cell-padding:20px;
+	cell-padding: 20px;
 }
 /* Comparison Blog End*/
 

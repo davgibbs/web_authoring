@@ -94,7 +94,22 @@ footer {
 
 /* Home Page */
 #home_content {
-    padding-top: 50px;	
+    margin-top: 50px;
+	background-color: #FFFFFF;
+	padding: 30px;
+	border-radius: 25px;
+    text-align: justify;
+	line-height: 1.5;
+}
+
+#sitemap ul li a {
+	text-decoration: none;
+	color: blue;
+	list-style-type: none;
+}
+
+#sitemap ul li {
+	list-style-type: none;
 }
 
 /* Home Page End */
@@ -193,6 +208,7 @@ footer {
 	padding: 30px;
 	border-radius: 25px;
 	height:inherit;
+	line-height: 1.5;
 }
 
 #blog_content p {

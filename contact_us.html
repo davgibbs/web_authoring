@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
+<meta name="keywords" content="webmyhealth,contact">
 <title>Contact Us | WebMyHealth</title>
 <!-- CSS File -->
 <link rel="stylesheet" type="text/css" href="css/base.css" />
@@ -27,60 +28,62 @@
         </div>
 	</header>  
     <section>
-        <div id="leave_message">
-            <h2>Please leave us a message!</h2>
-            <p>Interested in our website? Please leave us a message via the form below and we will get back to you as soon as possible!</p>
-            <br>
-            <form>
-            <table id="message-table">
-                <tr>
-                  <td><label>Name</label></td>
-                </tr>
-                <tr>
-                  <td><input type="text" name="textfield" id="fullName" autofocus></td>
-                </tr>
-                <tr>
-                  <td><label id="fullNameLabel" class="errorMessage"></label></td>
-                </tr>
-                <tr>
-                  <td><label>Email Address</label></td>
-                </tr>
-                <tr> 
-                  <td><input type="text" name="textfield2" id="emailAddress"></td>
-                </tr>
-                <tr>
-                  <td><label id="emailAddressLabel" class="errorMessage"></label></td>
-                </tr>
-                <tr>
-                  <td><label>Message</label></td>
-                </tr>
-                <tr>
-                  <td><textarea name="textarea" id="commentText"></textarea></td>
-                </tr>
-                <tr>
-                  <td><label id="commentLabel" class="errorMessage"></label></td>
-                </tr>
-                <tr>
-                   <td><input type="submit" value="Send" onClick="return validateForm()"></td>
-                </tr>
-            </table>
-            </form>
-        </div>
-        <div id="google_map">
-            <iframe height="70%" width="80%" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCnQbVPR3JDOpOJ-z0zaoGn2UAx9rpWmQQ&q=Blackrock+Further+Education+Institute     &attribution_source=Google+Maps+Embed+API&attribution_web_url=http://www.bfei.com/&attribution_ios_deep_link_id=comgooglemaps://?daddr=Blackrock+Further+Education+Institute" >
-            </iframe>
-        </div>
-        <div id="contact_info">
-            <h1>Contact</h1>
-            <br>
-            <p><strong>Blackrock College of Further Education</strong></p>
-            <br>
-            <p>Phone: 00-123-34567<br><br><br>Main Street<br>Blackrock<br>Co Dublin<br>IRELAND<br><br><br>Further Information at <a href="http://www.bfei.ie">http://www.bfei.ie</a></p>
-            <br>
-        </div>
+    	<div id="contactus_container">
+            <div id="leave_message">
+                <h2>Please leave us a message!</h2>
+                <p>Interested in our website? Please leave us a message via the form below and we will get back to you as soon as possible!</p>
+                <br>
+                <form>
+                <table id="message-table">
+                    <tr>
+                      <td><label>Name</label></td>
+                    </tr>
+                    <tr>
+                      <td><input type="text" name="textfield" id="fullName" autofocus></td>
+                    </tr>
+                    <tr>
+                      <td><label id="fullNameLabel" class="errorMessage"></label></td>
+                    </tr>
+                    <tr>
+                      <td><label>Email Address</label></td>
+                    </tr>
+                    <tr> 
+                      <td><input type="text" name="textfield2" id="emailAddress"></td>
+                    </tr>
+                    <tr>
+                      <td><label id="emailAddressLabel" class="errorMessage"></label></td>
+                    </tr>
+                    <tr>
+                      <td><label>Message</label></td>
+                    </tr>
+                    <tr>
+                      <td><textarea name="textarea" id="commentText"></textarea></td>
+                    </tr>
+                    <tr>
+                      <td><label id="commentLabel" class="errorMessage"></label></td>
+                    </tr>
+                    <tr>
+                       <td><input type="submit" value="Send" onClick="return validateForm()"></td>
+                    </tr>
+                </table>
+                </form>
+            </div>
+            <div id="google_map">
+                <iframe height="70%" width="80%" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCnQbVPR3JDOpOJ-z0zaoGn2UAx9rpWmQQ&q=Blackrock+Further+Education+Institute     &attribution_source=Google+Maps+Embed+API&attribution_web_url=http://www.bfei.com/&attribution_ios_deep_link_id=comgooglemaps://?daddr=Blackrock+Further+Education+Institute" >
+                </iframe>
+            </div>
+            <div id="contact_info">
+                <h1>Contact</h1>
+                <br>
+                <p><strong>Blackrock College of Further Education</strong></p>
+                <br>
+                <p>Phone: 00-123-34567<br><br><br>Main Street<br>Blackrock<br>Co Dublin<br>IRELAND<br><br><br>Further Information at <a href="http://www.bfei.ie">http://www.bfei.ie</a></p>
+                <br>
+            </div>
+        </div> <!-- End on contactus_container div -->
     </section>
     <footer>
-        Copyright © WebMyHealth
+        Copyright &copy; WebMyHealth 2015
     </footer>
 </body>
 </html>

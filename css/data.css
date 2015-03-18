@@ -11,32 +11,32 @@ html {
 }
 
 body {
-	background-color: #D3D3D3;/*#4778A1;*/
+	background-color: #e7e9ec;
 	margin:0;
 	padding:0;
 	height:100%;
 }
 
 header {
-    background-color: yellow;/*#4778A1;*/
-    color:white;
+    background-color: #ffff00;
+    color:#FFFFFF;
     text-align:center;
     padding:0px;
-	height: 30px;
+	height: 27px;
 	width: 100%;
 }
 
 section {
 	clear:both;
     width:100%;
-	height: -moz-calc(100% - 50px);
-    height: -webkit-calc(100% - 50px);
-    height: calc(100% - 50px);
+	height: -moz-calc(100% - 47px);
+    height: -webkit-calc(100% - 47px);
+    height: calc(100% - 47px);
 }
 
 footer {
-    background-color:yellow;
-    color:blue;
+    background-color:#ffff00;
+    color:#343477;
     clear:both;
     text-align:center;
 	position:fixed;
@@ -65,7 +65,7 @@ div.innerDivB-container {
 	height: 100%;
 }
 div.innerDivA-content, div.innerDivB-content {
-	border: 1px solid #D3D3D3;
+	border: 1px solid #e7e9ec;
 	margin: 0px;
     height: 100%;
 }
@@ -80,7 +80,7 @@ div.innerDivA-content, div.innerDivB-content {
 
 #profile_pic {
 	height: 200px;
-	background-color:#D3D3D3;
+	background-color:#e7e9ec;
 }
 
 #profile_info {
@@ -93,12 +93,12 @@ div.innerDivA-content, div.innerDivB-content {
 }
 
 #jstree_div {
-	background-color: #D3D3D3;
+	background-color: #e7e9ec;
 	height: -moz-calc(100% - 0px);
     height: -webkit-calc(100% - 0px);
     height: calc(100% - 0px);
 	font-size: 1.2em;
-	border: 1px solid #D3D3D3;
+	border: 1px solid #e7e9ec;
 	overflow: auto;
 }
 
@@ -111,8 +111,8 @@ div.innerDivA-content, div.innerDivB-content {
 
 #btop {
 	height: 200px;
-	background-color: #D3D3D3;
-	border: 1px solid #D3D3D3;
+	background-color: #e7e9ec;
+	border: 1px solid #e7e9ec;
 }
 
 #bbottom {
@@ -139,7 +139,7 @@ div.innerDivA-content, div.innerDivB-content {
 }
 
 #chartPadding-outer {
-	background-color: #D3D3D3;
+	background-color: #e7e9ec;
 	height: 100%;
 }
 

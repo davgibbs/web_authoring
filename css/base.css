@@ -136,6 +136,11 @@ footer {
 	border-bottom-right-radius: 25px;
 }
 
+#google_map iframe {
+    height:70%;
+	width:80%;
+}
+
 #contact_info {
 	width: 25%;
 	height: 340px;
@@ -221,6 +226,8 @@ footer {
 #blog_content p {
     text-align: left;
 	font-size: 14px;
+	text-align: justify;
+	line-height: 1.5;
 }
 
 .centeredImage    {
@@ -233,9 +240,9 @@ video {
 	margin:0 auto;
 }
 
-#five_wearables_map area {
-   outline: none;  
-}
+Map area{
+	   outline: none;
+	}
 /* Individual Blog Page End */
 
 /* Individual Wearables */
@@ -264,11 +271,7 @@ video {
 /* Individual Wearables End */
 
 /* Comparison Blog */
-#five_comp_table {
-	border-color: #000;
-}
 /* Comparison Blog End*/
-
 
 .clear{
 	clear:both;

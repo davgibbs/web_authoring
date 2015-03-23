@@ -2,8 +2,7 @@
 /* CSS Document */
 
 * {  
-	margin: 0 auto;  
-	padding: 0 auto;  
+	margin: 0 auto;
 	font-family: "Arial", Georgia, Serif;
 }
 /* Outer Element */
@@ -121,7 +120,7 @@ footer {
 	width: 32.5%;
 	height: 480px;
 	float: left;
-	background-color: #a84551;
+	background-color: #FFFFFF;
 	padding-top: 2%;
 	border-top-left-radius: 25px;
 	border-bottom-left-radius: 25px;
@@ -132,7 +131,7 @@ footer {
 	height: 480px;
 	float: left;
 	padding-top: 2%;
-	background-color: #a84551;
+	background-color: #FFFFFF;
 	border-top-right-radius: 25px;
 	border-bottom-right-radius: 25px;
 }
@@ -141,7 +140,7 @@ footer {
 	width: 25%;
 	height: 340px;
 	float: left;
-	background-color: #a84551;
+	background-color: #FFFFFF;
 	padding-top: 2%;
 	margin-left: 13%;
 	padding-right: 2%;
@@ -267,7 +266,6 @@ video {
 /* Comparison Blog */
 #five_comp_table {
 	border-color: #000;
-	cell-padding: 20px;
 }
 /* Comparison Blog End*/
 

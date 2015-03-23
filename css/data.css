@@ -94,9 +94,7 @@ div.innerDivA-content, div.innerDivB-content {
 
 #jstree_div {
 	background-color: #e7e9ec;
-	height: -moz-calc(100% - 0px);
-    height: -webkit-calc(100% - 0px);
-    height: calc(100% - 0px);
+	height: 100%;
 	font-size: 1.2em;
 	border: 1px solid #e7e9ec;
 	overflow: auto;
@@ -125,9 +123,7 @@ div.innerDivA-content, div.innerDivB-content {
 #webmyhealth-chart {
 	font-size: 1.1em;
 	font-weight: bold;
-	height: -moz-calc(100% - 0px);
-    height: -webkit-calc(100% - 0px);
-	height: calc(100% - 0px);
+	height: 100%;
 }
 
 #chartPadding {
@@ -245,7 +241,7 @@ div.innerDivA-content, div.innerDivB-content {
 }
 
 .value-cell {
-    text-align: right;
+    text-align: center;
 }
 /* My table styling End */
 

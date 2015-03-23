@@ -157,8 +157,10 @@ function get_day_of_week(date_str) {
 	weekday[5] = "Fri";
 	weekday[6] = "Sat";
 	
-	milliseconds_since_epoch = Date.parse(date_str);
-	date = new Date(milliseconds_since_epoch);
+	year = date_str.split("-")[0]
+	month = date_str.split("-")[1] - 1 // Need to subtract 1 as Javascript Data Month is indexed from 0
+	day = date_str.split("-")[2]
+	date = new Date(year, month, day);
     return weekday[date.getDay()];
 }
 
@@ -181,12 +183,12 @@ function renderTable(sensorlog_ids, show_target) {
 	$('#my-table').append( '<tbody>' );      
 	if (data.length > 1){
 		for (i = 0; i < data[0].length; i++){
-			$('#my-table').append('<tr><td>' + data[0][i][0] + '</td><td>' + get_day_of_week(data[0][i][0]) + '</td><td class="value-cell">' + data[0][i][1].toLocaleString() + '</td><td class="value-cell">' + data[1][i][1].toLocaleString() + '</td><tr>');
+			$('#my-table').append('<tr><td>' + data[0][i][0] + '</td><td class="value-cell">' + get_day_of_week(data[0][i][0]) + '</td><td class="value-cell">' + data[0][i][1].toLocaleString() + '</td><td class="value-cell">' + data[1][i][1].toLocaleString() + '</td><tr>');
 			}
 		}
 	else {
 		for (i = 0; i < data[0].length; i++){
-			$('#my-table').append('<tr><td>' + data[0][i][0] + '</td><td>' + get_day_of_week(data[0][i][0]) + '</td><td class="value-cell">' + data[0][i][1].toLocaleString() + '</td><tr>');
+			$('#my-table').append('<tr><td>' + data[0][i][0] + '</td><td class="value-cell">' + get_day_of_week(data[0][i][0]) + '</td><td class="value-cell">' + data[0][i][1].toLocaleString() + '</td><tr>');
 			}
 		}
 	$('#my-table').append( '</tbody>' );

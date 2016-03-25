@@ -6,7 +6,7 @@ This repository contains the front-end for a website which displays information 
 There are no dependencies in this project. Simply clone this repository, and open the home page in your favourite browser:
 
 * git clone https://dgibbons999@bitbucket.org/dgibbons999/web_authoring.git
-* google-chrome home.html
+* google-chrome web_authoring/home.html
 
 ### Contribution guidelines ###
 

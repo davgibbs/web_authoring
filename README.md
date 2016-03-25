@@ -1,6 +1,6 @@
 ### What is this repository for? ###
 
-This repository contains the front-end for a website which displays information relevent for individuals who wish to try their health. This includes a 4 website sections (Home, Data, Blog and Contact Us). The data section contains a dynamic page for exploring data collected from a Fitbit Flex, and the Blog page contains a blog post on "A Comparison of Five Activity Trackers".
+This repository contains the front-end for a website which displays information relevent for individuals who wish to measure and track their own health data. This includes a 4 website sections (Home, Data, Blog and Contact Us). The data section contains a dynamic page for exploring data collected from a Fitbit Flex, and the Blog page contains a blog post on "A Comparison of Five Activity Trackers".
 
 ### How do I get set up? ###
 There are no dependencies in this project. Simply clone this repository 

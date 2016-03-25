@@ -1,28 +1,16 @@
-# README #
-
-This README would normally document whatever steps are necessary to get your application up and running.
-
-
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+This repository contains the front-end for a website which displays information relevent for individuals who wish to try their health. This includes a 4 website sections (Home, Data, Blog and Contact Us). The data section contains a dynamic page for exploring data collected from a Fitbit Flex, and the Blog page contains a blog post on "A Comparison of Five Activity Trackers".
 
 ### How do I get set up? ###
+There are no dependencies in this project. Simply clone this repository 
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* git clone https://dgibbons999@bitbucket.org/dgibbons999/web_authoring.git
+* google-chrome home.html
 
 ### Contribution guidelines ###
 
-* Writing tests
-* Code review
-* Other guidelines
+This repository was used as part of a submission towards a certificate for a web authoring course in Dublin, Ireland. It is no longer maintained.
 
 ### Who do I talk to? ###
 
